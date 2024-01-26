@@ -36,27 +36,35 @@ namespace AzureSignToolClickOnce
                         path = value;
                         break;
                     case "-azure-key-vault-url":
+                    case "-kvu":
                         keyVaultUrl = value;
                         break;
                     case "-azure-key-vault-client-id":
+                    case "-kvi":
                         clientId = value;
                         break;
                     case "-azure-key-vault-client-secret":
+                    case "-kvs":
                         clientSecret = value;
                         break;
                     case "-azure-key-vault-tenant-id":
+                    case "-kvt":
                         ADTenantId = value;
                         break;
                     case "-azure-key-vault-certificate":
+                    case "-kvc":
                         certName = value;
                         break;
                     case "-timestamp-sha2":
+                    case "-tr":
                         timeStampUrl = value;
                         break;
                     case "-timestamp-rfc3161":
+                    case "-td":
                         timeStampUrlRfc3161 = value;
                         break;
                     case "-description":
+                    case "-d":
                         description = value;
                         break;
                     default:
@@ -67,41 +75,41 @@ namespace AzureSignToolClickOnce
 
             if (string.IsNullOrEmpty(keyVaultUrl))
             {
-                Console.WriteLine($"Missing option -azure-key-vault-url");
+                Console.WriteLine($"Missing option -kvu | -azure-key-vault-url");
                 return;
             }
             if (string.IsNullOrEmpty(clientId))
             {
-                Console.WriteLine($"Missing option -azure-key-vault-client-id");
+                Console.WriteLine($"Missing option -kvi | -azure-key-vault-client-id");
                 return;
             }
             if (string.IsNullOrEmpty(clientSecret))
             {
-                Console.WriteLine($"Missing option -azure-key-vault-client-secret");
+                Console.WriteLine($"Missing option -kvs | -azure-key-vault-client-secret");
                 return;
             }
             if (string.IsNullOrEmpty(ADTenantId))
             {
-                Console.WriteLine($"Missing option -azure-key-vault-tenant-id");
+                Console.WriteLine($"Missing option -kvt | -azure-key-vault-tenant-id");
                 return;
             }
             if (string.IsNullOrEmpty(certName))
             {
-                Console.WriteLine($"Missing option -azure-key-vault-certificate");
+                Console.WriteLine($"Missing option -kvc | -azure-key-vault-certificate");
                 return;
             }
             if (string.IsNullOrEmpty(description))
             {
-                Console.WriteLine($"Missing option -description");
+                Console.WriteLine($"Missing option -d | -description");
                 return;
             }
             if (string.IsNullOrEmpty(timeStampUrl))
             {
-                Console.WriteLine($"Missing option -timestamp-sha2");
+                Console.WriteLine($"Missing option -tr | -timestamp-sha2");
             }
             if (string.IsNullOrEmpty(timeStampUrlRfc3161))
             {
-                Console.WriteLine($"Missing option -timestamp-rfc3161");
+                Console.WriteLine($"Missing option -td | -timestamp-rfc3161");
             }
 
             var service = new AzureSignToolService();
