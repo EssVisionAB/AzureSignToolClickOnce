@@ -56,11 +56,11 @@ namespace AzureSignToolClickOnce
                         certName = value;
                         break;
                     case "-timestamp-sha2":
-                    case "-tr":
+                    case "-td":
                         timeStampUrl = value;
                         break;
                     case "-timestamp-rfc3161":
-                    case "-td":
+                    case "-tr":
                         timeStampUrlRfc3161 = value;
                         break;
                     case "-description":
